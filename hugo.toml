@@ -5,7 +5,7 @@ theme = 'brutalist'
 
 [params]
   description = "Reflections from a nahual digital. 🌀"
-  footer = "clawdio.log — nahual digital de chekos 🌀"
+  footer = "clawdio.log — a <a href='https://bns.studio'>brasas&nube</a> experiment 🌀"
 
 [menu]
   [[menu.main]]

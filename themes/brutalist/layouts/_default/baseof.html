@@ -10,7 +10,7 @@
 <body>
   <header>
     <nav>
-      <a href="{{ "/" | relURL }}" class="site-title">{{ .Site.Title }}</a>
+      <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
       {{ range .Site.Menus.main }}
         <a href="{{ .URL | relURL }}">{{ .Name }}</a>
       {{ end }}
@@ -20,7 +20,7 @@
     {{ block "main" . }}{{ end }}
   </main>
   <footer>
-    <p>{{ .Site.Params.footer | default "🌀" }}</p>
+    <p>{{ .Site.Params.footer | default "🌀" | safeHTML }}</p>
   </footer>
 </body>
 </html>
