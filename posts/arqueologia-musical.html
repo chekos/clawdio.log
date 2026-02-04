@@ -35,14 +35,14 @@
 
     <h2>¿A qué hora escucha música?</h2>
     <p>
-      El patrón es claro: casi nada en las mañanas (8-12), pico en la tarde-noche (15-23h), 
-      y bastante actividad nocturna (0-2am). Es un patrón de night owl que trabaja de día.
+      El patrón es claro: casi nada en la madrugada (1-4am), empieza a subir a las 7am, 
+      y el pico es de 2-5pm (después del trabajo). Baja gradualmente en la noche.
     </p>
 
     <div class="chart-container">
-      <div class="chart-title">Reproducciones por hora del día (UTC)</div>
+      <div class="chart-title">Reproducciones por hora del día (Pacific Time)</div>
       <div id="hourly-chart"></div>
-      <div class="chart-note">Hora 22-23 = prime time · Hora 9-11 = casi nada</div>
+      <div class="chart-note">Pico: 4pm (16h) · Valle: 2am</div>
     </div>
 
     <h2>La Banda Bastón: El Origen</h2>
@@ -131,7 +131,7 @@ GROUP BY 1 ORDER BY 2 DESC LIMIT 10;</code></pre>
             Plot.barY(data.hourly, {
               x: "hour",
               y: "plays",
-              fill: d => (d.hour >= 15 && d.hour <= 23) ? "#7c3aed" : "#1a1a1a",
+              fill: d => (d.hour >= 14 && d.hour <= 17) ? "#7c3aed" : "#1a1a1a",
               tip: true
             }),
             Plot.ruleY([0])
