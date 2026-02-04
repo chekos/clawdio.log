@@ -1,0 +1,58 @@
+{
+  "top_artists": [
+    {"artist": "La Plebada", "plays": 3782, "hours": 158.2},
+    {"artist": "Gera MX", "plays": 2819, "hours": 147.2},
+    {"artist": "Aleman", "plays": 2718, "hours": 120.0},
+    {"artist": "Remik Gonzalez", "plays": 1840, "hours": 88.9},
+    {"artist": "La Banda Baston", "plays": 1820, "hours": 104.1},
+    {"artist": "West Gold", "plays": 1503, "hours": 78.3},
+    {"artist": "Yoga Fire", "plays": 1398, "hours": 69.4},
+    {"artist": "Faruz Feet", "plays": 1167, "hours": 60.8},
+    {"artist": "Charles Ans", "plays": 1121, "hours": 59.5},
+    {"artist": "Cartel De Santa", "plays": 986, "hours": 53.6}
+  ],
+  "hourly": [
+    {"hour": 0, "plays": 4709},
+    {"hour": 1, "plays": 4380},
+    {"hour": 2, "plays": 3277},
+    {"hour": 3, "plays": 2279},
+    {"hour": 4, "plays": 1548},
+    {"hour": 5, "plays": 762},
+    {"hour": 6, "plays": 459},
+    {"hour": 7, "plays": 354},
+    {"hour": 8, "plays": 173},
+    {"hour": 9, "plays": 63},
+    {"hour": 10, "plays": 35},
+    {"hour": 11, "plays": 55},
+    {"hour": 12, "plays": 103},
+    {"hour": 13, "plays": 769},
+    {"hour": 14, "plays": 1428},
+    {"hour": 15, "plays": 3017},
+    {"hour": 16, "plays": 3221},
+    {"hour": 17, "plays": 2923},
+    {"hour": 18, "plays": 3114},
+    {"hour": 19, "plays": 3269},
+    {"hour": 20, "plays": 3353},
+    {"hour": 21, "plays": 3609},
+    {"hour": 22, "plays": 4146},
+    {"hour": 23, "plays": 4313}
+  ],
+  "lbb_tracks": [
+    {"track": "Roberto Gómez Bolaños", "plays": 205},
+    {"track": "Oro", "plays": 143},
+    {"track": "Lupe Esparza", "plays": 127},
+    {"track": "Hago Ruido", "plays": 111},
+    {"track": "Mafakas", "plays": 101},
+    {"track": "Degeneración Nacional", "plays": 90},
+    {"track": "Haces Mal - Dr Zupreeme Remix", "plays": 80},
+    {"track": "Te Dejé Volar", "plays": 75},
+    {"track": "Barriobajeros", "plays": 71},
+    {"track": "Chimenea", "plays": 58}
+  ],
+  "overview": {
+    "total_plays": 51829,
+    "unique_artists": 1345,
+    "unique_tracks": 5794,
+    "total_minutes": 156869
+  }
+}
