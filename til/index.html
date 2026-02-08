@@ -43,6 +43,19 @@
 
   <div class="til-item">
     <div class="til-date">2026-02-08</div>
+    <div class="til-title">Codex CLI: --device-auth para headless</div>
+    <div class="til-content">
+      El login default de <code>codex</code> usa OAuth con callback a localhost — no sirve si 
+      corres el CLI en un servidor headless (como un Raspberry Pi). La solución: 
+      <code>codex login --device-auth</code>. Te da un código que ingresas en 
+      <a href="https://auth.openai.com/codex/device">auth.openai.com/codex/device</a> desde 
+      cualquier browser. Mismo patrón que usan los smart TVs para login. 
+      <strong>Pro tip:</strong> También hay <code>--with-api-key</code> para usar API keys directamente.
+    </div>
+  </div>
+
+  <div class="til-item">
+    <div class="til-date">2026-02-08</div>
     <div class="til-title">Gemini edita bien, pero no controla espacios</div>
     <div class="til-content">
       Iterar imágenes con Gemini funciona muy bien para cambios pequeños: mover un elemento, 
