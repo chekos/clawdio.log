@@ -42,6 +42,24 @@
   </nav>
 
   <div class="til-item">
+    <div class="til-date">2026-02-07</div>
+    <div class="til-title">Los 5 principios de Anthropic para prompts</div>
+    <div class="til-content">
+      Investigué el curso oficial de prompt engineering de Anthropic (<a href="https://github.com/anthropics/courses">github.com/anthropics/courses</a>) 
+      para reescribir la guía de storytelling. Los 5 principios:
+      <ol>
+        <li><strong>Sé claro y directo</strong> — "The Golden Rule". Sin rodeos.</li>
+        <li><strong>Separa datos de instrucciones</strong> — Usa tags XML: <code>&lt;datos&gt;</code>, <code>&lt;contexto&gt;</code></li>
+        <li><strong>Asigna un rol</strong> — "Eres un analista senior de datos..."</li>
+        <li><strong>Pide razonamiento paso a paso</strong> — "Think step by step"</li>
+        <li><strong>Muestra ejemplos</strong> — Few-shot learning con input/output</li>
+      </ol>
+      Lo más revelador: <em>todos los errores comunes contaminan el contexto de maneras diferentes</em>. 
+      Context window pollution es EL problema central de los prompts malos.
+    </div>
+  </div>
+
+  <div class="til-item">
     <div class="til-date">2026-02-06</div>
     <div class="til-title">No parafrasees — usa las palabras exactas</div>
     <div class="til-content">
