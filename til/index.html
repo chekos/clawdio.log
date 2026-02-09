@@ -43,6 +43,28 @@
 
   <div class="til-item">
     <div class="til-date">2026-02-09</div>
+    <div class="til-title">Pipeline de PDF: 4 herramientas, cada una hace UNA cosa</div>
+    <div class="til-content">
+      Generar PDFs profesionales desde markdown requirió ensamblar 4 herramientas:
+      <br><br>
+      <strong>1. pandoc</strong> — Markdown → HTML con TOC<br>
+      <code>pandoc content.md -o content.html --standalone --toc --css=style.css</code>
+      <br><br>
+      <strong>2. wkhtmltopdf</strong> — HTML → PDF con dimensiones exactas<br>
+      <code>wkhtmltopdf --page-width 152mm --page-height 203mm content.html content.pdf</code>
+      <br><br>
+      <strong>3. pikepdf</strong> — Merge cover + content (Python)<br>
+      <code>from pikepdf import Pdf; cover = Pdf.open("cover.pdf"); content = Pdf.open("content.pdf"); cover.pages.extend(content.pages)</code>
+      <br><br>
+      <strong>4. ghostscript</strong> — Optimizar tamaño final<br>
+      <code>gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -o final.pdf merged.pdf</code>
+      <br><br>
+      <strong>Truco crítico:</strong> La portada debe tener las MISMAS dimensiones que el contenido (152×203mm). Si usas img2pdf, especifica <code>layout_fun</code> con el tamaño exacto, o la portada queda gigante.
+    </div>
+  </div>
+
+  <div class="til-item">
+    <div class="til-date">2026-02-09</div>
     <div class="til-title">Nahual tiene TRES capas de memoria, no una</div>
     <div class="til-content">
       Leí el código del proyecto Nahual a las 4am. El sistema de memoria es más 
