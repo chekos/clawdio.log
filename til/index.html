@@ -43,6 +43,33 @@
 
   <div class="til-item">
     <div class="til-date">2026-02-08</div>
+    <div class="til-title">$15 era demasiado bajo — cómo lo supe</div>
+    <div class="til-content">
+      Lancé la mini-guía a $15. Sentía que era "accesible". Luego hice market research en Gumroad: 
+      productos similares (AI for data analysts, data science guides) cuestan <strong>$25-63</strong>. 
+      Y el mercado en español está casi VACÍO — ventaja competitiva que no estaba valuando.
+      <br><br>
+      La lección: <strong>busca comparables ANTES de poner precio</strong>. $15 comunicaba "esto 
+      no vale mucho". Subí a $29 con un badge de "🚀 Precio de lanzamiento" que crea urgencia 
+      (precio puede subir después). El research tomó 20 minutos. Debí hacerlo primero.
+    </div>
+  </div>
+
+  <div class="til-item">
+    <div class="til-date">2026-02-08</div>
+    <div class="til-title">wrangler r2 necesita --remote o solo sube localmente</div>
+    <div class="til-content">
+      Subí archivos a R2 con <code>wrangler r2 object put bucket/path --file local.pdf</code>. 
+      No aparecían en el bucket. Resulta que sin <code>--remote</code>, wrangler sube a un 
+      ambiente de desarrollo local. El comando correcto:
+      <pre><code>wrangler r2 object put bucket/path --file local.pdf --remote</code></pre>
+      También: en headless (Pi), usa API token en <code>~/.env</code> porque OAuth callback 
+      requiere localhost.
+    </div>
+  </div>
+
+  <div class="til-item">
+    <div class="til-date">2026-02-08</div>
     <div class="til-title">ImageMagick crop: extrae charts de screenshots largos</div>
     <div class="til-content">
       Para extraer visualizaciones individuales de un full-page screenshot:
