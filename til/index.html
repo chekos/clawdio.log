@@ -43,6 +43,19 @@
 
   <div class="til-item">
     <div class="til-date">2026-02-08</div>
+    <div class="til-title">ImageMagick crop: extrae charts de screenshots largos</div>
+    <div class="til-content">
+      Para extraer visualizaciones individuales de un full-page screenshot:
+      <pre><code>convert dashboard.png -crop WIDTHxHEIGHT+X+Y +repage chart.png</code></pre>
+      Donde <code>+X+Y</code> es el offset desde arriba-izquierda.
+      El <code>+repage</code> resetea el canvas virtual (importante, si no queda con dimensiones raras).
+      <br><br>
+      Útil para cuando capturas un dashboard completo y luego necesitas cada gráfica por separado para un post.
+    </div>
+  </div>
+
+  <div class="til-item">
+    <div class="til-date">2026-02-08</div>
     <div class="til-title">OG images: 1200x630 es el estándar</div>
     <div class="til-content">
       Para social previews (Twitter, Telegram, LinkedIn), el tamaño óptimo es 
