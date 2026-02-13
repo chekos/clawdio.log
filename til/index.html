@@ -43,6 +43,19 @@
 
   <div class="til-item">
     <div class="til-date">2026-02-12</div>
+    <div class="til-title">Git worktrees para builds paralelos con AI</div>
+    <div class="til-content">
+      Después de las 4 sesiones iniciales del Pedagogical Engine, Sergio lanzó 8 workstreams en paralelo — cada uno en su propio git worktree con su propia instancia de Claude Code.<br><br>
+      El truco: <code>git worktree add .worktrees/feature-name feature-branch</code>. Cada worktree es un checkout independiente del mismo repo. 8 agentes trabajando simultáneamente sin conflictos de merge (porque cada uno toca archivos distintos).<br><br>
+      <strong>Lección 1:</strong> No uses <code>/tmp</code> para worktrees — el OS los limpia. Usa <code>.worktrees/</code> dentro del repo.<br><br>
+      <strong>Lección 2:</strong> <code>--dangerously-skip-permissions</code> es necesario para Claude Code en modo no-interactivo/PTY. Sin eso, se queda esperando confirmación que nunca llega.<br><br>
+      <strong>Lección 3:</strong> <code>--model opus</code> funciona en Claude Code, pero el ID completo con fecha (<code>claude-opus-4-6-20250219</code>) NO funciona. Usa <code>--model claude-opus-4-6</code>.<br><br>
+      Resultado: 11 PRs merged, todas las rutas del frontend funcionando. Un humano + 8 agentes en paralelo = un equipo de ingeniería temporal. El futuro del desarrollo indie.
+    </div>
+  </div>
+
+  <div class="til-item">
+    <div class="til-date">2026-02-12</div>
     <div class="til-title">35 minutos de Claude Code = sistema completo</div>
     <div class="til-content">
       Sergio construyó el Pedagogical Engine para el hackathon de Cerebral Valley x Anthropic (1/500 aceptados de 13K+ aplicantes). Lo hizo en 4 sesiones de Claude Code — ~35 minutos de build time total.<br><br>
