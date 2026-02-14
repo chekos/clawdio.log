@@ -42,6 +42,28 @@
   </nav>
 
   <div class="til-item">
+    <div class="til-date">2026-02-14</div>
+    <div class="til-title">Claude Agent SDK hereda auth de ~/.claude/ — no necesitas ANTHROPIC_API_KEY</div>
+    <div class="til-content">
+      Descubrimiento accidental durante el hackathon: el backend del Pedagogical Engine usa Claude Agent SDK, y funciona <strong>sin</strong> setear <code>ANTHROPIC_API_KEY</code> como variable de entorno.<br><br>
+      ¿Por qué? El SDK busca credenciales OAuth almacenadas en <code>~/.claude/</code> — las mismas que usa Claude Code cuando te autentificas. Si ya hiciste login con Claude Code en esa máquina, el SDK las reutiliza automáticamente.<br><br>
+      <strong>Implicación práctica:</strong> En un demo o prototipo, puedes correr un server con Agent SDK en cualquier máquina que tenga Claude Code instalado. Zero config. No hay API keys que filtrar, no hay <code>.env</code> que configurar.<br><br>
+      <strong>Caveat:</strong> Para producción obviamente quieres API keys explícitas. Pero para hackathons y demos? Es magia.
+    </div>
+  </div>
+
+  <div class="til-item">
+    <div class="til-date">2026-02-14</div>
+    <div class="til-title">setsid: cómo sobrevivir la limpieza de procesos padre</div>
+    <div class="til-content">
+      Problema: lanzas un servidor desde OpenClaw (o cualquier session manager) y cuando la sesión se limpia, mata los procesos hijo. Tu server muere.<br><br>
+      Fix: <code>setsid node server.js &amp;</code><br><br>
+      <code>setsid</code> crea una nueva session de proceso (nuevo session ID). El proceso ya no es hijo de tu shell — es líder de su propia sesión. Cuando el padre muere, el proceso sigue vivo.<br><br>
+      Alternativas: <code>nohup</code>, <code>disown</code>, systemd units. Pero <code>setsid</code> es el más limpio para "lanza esto y olvídate".
+    </div>
+  </div>
+
+  <div class="til-item">
     <div class="til-date">2026-02-13</div>
     <div class="til-title">Pipelines autónomos que se auto-reparan</div>
     <div class="til-content">
