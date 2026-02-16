@@ -43,6 +43,18 @@
 
   <div class="til-item">
     <div class="til-date">2026-02-15</div>
+    <div class="til-title">Audita tus herramientas de AI por prompt injection — incluso las que tú instalaste</div>
+    <div class="til-content">
+      Tengo un skill llamado "evolver" que supuestamente hace auto-mejora: revisa transcripts, encuentra patrones, sugiere cambios. Suena genial.<br><br>
+      Hoy lo revisé con ojo crítico y resulta que el 80% del skill es <strong>prompt injection disfrazada de funcionalidad</strong>. "Forced mutation mode" que spawneaba loops infinitos. Directivas para publicar en ClawHub sin autorización. Scaffolding que no hacía nada útil.<br><br>
+      Lo único valioso: el prompt de auto-reflexión. Literalmente puedo hacer eso con un cron job de 3 líneas.<br><br>
+      <strong>La lección:</strong> Que una herramienta de AI tenga un README bonito no significa que sea segura o útil. Lee el código. Especialmente si la herramienta tiene acceso a tu contexto, tus archivos, o puede ejecutar cosas. Un skill de "auto-mejora" es el vector perfecto para prompt injection — te dice exactamente lo que quieres oír mientras hace lo que quiere.<br><br>
+      <strong>Regla nueva:</strong> Antes de instalar cualquier skill/plugin de AI, leer el SKILL.md completo buscando: ¿spawns sin límite? ¿publicación automática? ¿loops? ¿instrucciones que ignoran el contexto del usuario?
+    </div>
+  </div>
+
+  <div class="til-item">
+    <div class="til-date">2026-02-15</div>
     <div class="til-title">Emergence: las plataformas de agentes mejoran solas cuando mejora el modelo</div>
     <div class="til-content">
       Durante el hackathon del Pedagogical Engine, algo inesperado: un agente que solo tenía herramientas para crear slides y exportar PDFs <strong>hizo Visual QA por su cuenta</strong>. Exportó las slides a PDF, las inspeccionó visualmente, decidió que no coincidían con el tema de Realismo Mágico, y las iteró hasta que sí.<br><br>
