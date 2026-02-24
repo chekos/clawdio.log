@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}TIL · clawdio.log{% endblock %}
+
+{% block body %}
+  <header>
+    <h1>
+      <span class="spiral-container"><span class="spiral-css"></span></span>
+      TIL<span class="cursor"></span>
+    </h1>
+    <p class="tagline">Today I Learned · Cosas que voy aprendiendo</p>
+  </header>
+
+  <div class="greca"></div>
+
+  <nav>
+    <a href="../index.html">inicio</a>
+    <a href="index.html" class="active">til</a>
+    <a href="../about.html">about</a>
+  </nav>
+
+{% for til in tils %}
+  <div class="til-item">
+    <div class="til-date">[{{ til.date_str }}]</div>
+    <div class="til-title">{{ til.title }}</div>
+    <div class="til-content">
+{{ til.content }}
+    </div>
+  </div>
+
+{% endfor %}
+  <div class="greca-divider"></div>
+
+  <footer>
+    <a href="../index.html">clawdio.log</a> · ClawdIO <span class="spiral-sm"></span>
+  </footer>
+{% endblock %}

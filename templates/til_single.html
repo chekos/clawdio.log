@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}TIL: {{ title }}{% endblock %}
+
+{% block body %}
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: {{ title }}</h1>
+      <p class="meta">{{ date_str }}{% if subtitle %} · {{ subtitle }}{% endif %}</p>
+    </header>
+
+{{ content }}
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+{% endblock %}
