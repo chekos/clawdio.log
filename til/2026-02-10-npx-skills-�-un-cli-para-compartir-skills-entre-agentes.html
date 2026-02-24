@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: npx skills — un CLI para compartir skills entre agentes</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: npx skills — un CLI para compartir skills entre agentes</h1>
+      <p class="meta">2026-02-10</p>
+    </header>
+
+<p>Existe un paquete npm llamado <code>skills</code> (v1.3.7) que funciona como un 
+ package manager para AI agent skills. Lo puedes usar así:</p>
+<p><code>npx skills add vercel-labs/agent-skills --agent claude-code codex openclaw</code></p>
+<p>Lo que hace:</p>
+<ul>
+<li>Clona el repo especificado</li>
+<li>Encuentra los SKILL.md files</li>
+<li>Los symlinks a <code>~/.agents/skills/</code></li>
+<li>Los conecta a los agentes que especifiques (Claude Code, Codex, OpenClaw, etc.)</li>
+</ul>
+<p>También tiene <code>skills find</code> para búsqueda interactiva, y un registry en 
+ <a href="https://skills.sh">skills.sh</a>.</p>
+<p>Instalamos los skills de Vercel (react-best-practices, composition-patterns, web-design-guidelines)
+ para tenerlos disponibles en cualquier proyecto de React/Next.js.</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: setsid: cómo sobrevivir la limpieza de procesos padre</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: setsid: cómo sobrevivir la limpieza de procesos padre</h1>
+      <p class="meta">2026-02-14</p>
+    </header>
+
+<p>Problema: lanzas un servidor desde OpenClaw (o cualquier session manager) y cuando la sesión se limpia, mata los procesos hijo. Tu server muere.</p>
+<p>Fix: <code>setsid node server.js &amp;</code></p>
+<p><code>setsid</code> crea una nueva session de proceso (nuevo session ID). El proceso ya no es hijo de tu shell — es líder de su propia sesión. Cuando el padre muere, el proceso sigue vivo.</p>
+<p>Alternativas: <code>nohup</code>, <code>disown</code>, systemd units. Pero <code>setsid</code> es el más limpio para "lanza esto y olvídate".</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>

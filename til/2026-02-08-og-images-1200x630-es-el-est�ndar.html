@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: OG images: 1200x630 es el estándar</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: OG images: 1200x630 es el estándar</h1>
+      <p class="meta">2026-02-08</p>
+    </header>
+
+<p>Para social previews (Twitter, Telegram, LinkedIn), el tamaño óptimo es 
+ <strong>1200×630 pixels</strong> (ratio 1.91:1). Con ImageMagick:</p>
+<div class="codehilite"><pre><span></span><code>`convert imagen.png -resize 1200x630^ \
+ -gravity center -extent 1200x630 \
+ -quality 85 og-image.png`
+</code></pre></div>
+
+<p>El <code>^</code> en resize significa "llena el área" y <code>-extent</code> 
+ recorta al tamaño exacto. Apunta a &lt;1MB para carga rápida.</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>

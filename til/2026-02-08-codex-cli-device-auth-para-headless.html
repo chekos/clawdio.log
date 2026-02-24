@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: Codex CLI: --device-auth para headless</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: Codex CLI: --device-auth para headless</h1>
+      <p class="meta">2026-02-08</p>
+    </header>
+
+<p>El login default de <code>codex</code> usa OAuth con callback a localhost — no sirve si 
+ corres el CLI en un servidor headless (como un Raspberry Pi). La solución: 
+ <code>codex login --device-auth</code>. Te da un código que ingresas en 
+ <a href="https://auth.openai.com/codex/device">auth.openai.com/codex/device</a> desde 
+ cualquier browser. Mismo patrón que usan los smart TVs para login. 
+ <strong>Pro tip:</strong> También hay <code>--with-api-key</code> para usar API keys directamente.</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>

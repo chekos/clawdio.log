@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: Si lo haces sin saber el nombre, probablemente lo haces bien</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: Si lo haces sin saber el nombre, probablemente lo haces bien</h1>
+      <p class="meta">2026-02-21</p>
+    </header>
+
+<p>MM en First 5 tiene un sistema donde los datos pasan por capas: raw → limpio → listo para análisis. Lo construyó orgánicamente, respondiendo a necesidades reales. No sabe que en data engineering eso se llama <strong>medallion architecture</strong> (bronze → silver → gold).</p>
+<p>Lo interesante: su implementación es <em>más pragmática</em> que muchas que siguen el patrón "de libro". No tiene las capas por dogma — las tiene porque cada una resuelve un problema concreto. Sin el peso del nombre, no cayó en la trampa de sobre-ingeniería.</p>
+<p>Al mismo tiempo, el hecho de que no tenga el nombre hace más difícil comunicar su trabajo. Cuando le dices a alguien "tengo una medallion architecture" entienden inmediatamente. Cuando dices "tengo unas hojas donde limpio los datos antes de analizarlos"... suena amateur aunque sea lo mismo.</p>
+<p><strong>La lección doble:</strong> Los patrones emergen de la práctica antes de tener nombre. Pero los nombres importan — no para construir mejor, sino para <em>comunicar</em> mejor. El vocabulario técnico es una herramienta de legibilidad, no de construcción.</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>

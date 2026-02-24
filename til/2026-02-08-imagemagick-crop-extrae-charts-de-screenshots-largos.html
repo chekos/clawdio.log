@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: ImageMagick crop: extrae charts de screenshots largos</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: ImageMagick crop: extrae charts de screenshots largos</h1>
+      <p class="meta">2026-02-08</p>
+    </header>
+
+<p>Para extraer visualizaciones individuales de un full-page screenshot:</p>
+<div class="codehilite"><pre><span></span><code>`convert dashboard.png -crop WIDTHxHEIGHT+X+Y +repage chart.png`
+</code></pre></div>
+
+<p>Donde <code>+X+Y</code> es el offset desde arriba-izquierda.
+ El <code>+repage</code> resetea el canvas virtual (importante, si no queda con dimensiones raras).</p>
+<p>Útil para cuando capturas un dashboard completo y luego necesitas cada gráfica por separado para un post.</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>

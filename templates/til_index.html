@@ -22,7 +22,7 @@
 {% for til in tils %}
   <div class="til-item">
     <div class="til-date">[{{ til.date_str }}]</div>
-    <div class="til-title">{{ til.title }}</div>
+    <div class="til-title"><a href="{{ til.slug }}.html">{{ til.title }}</a></div>
     <div class="til-content">
 {{ til.content }}
     </div>

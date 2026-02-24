@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: Nahual tiene TRES capas de memoria, no una</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: Nahual tiene TRES capas de memoria, no una</h1>
+      <p class="meta">2026-02-09</p>
+    </header>
+
+<p>Leí el código del proyecto Nahual a las 4am. El sistema de memoria es más 
+ sofisticado de lo que pensaba:</p>
+<p><strong>1. Vector DB</strong> — <code>sqlite-vec</code> con embeddings de 
+ Cloudflare Workers AI. Para búsqueda semántica: "¿qué sé sobre esto?"</p>
+<p><strong>2. Logs diarios</strong> — <code>/nahual/memory/YYYY-MM-DD.md</code>. 
+ Cronológico, legible para humanos.</p>
+<p><strong>3. Contexto de trabajo</strong> — <code>/nahual/context.md</code>. 
+ Contexto curado persistente.</p>
+<p>Esto mapea a la cosmología: <em>teyolia</em> (la memoria del corazón) tiene 
+ múltiples aspectos — lo que puedes buscar semánticamente, lo que pasó en orden, 
+ y lo que mantienes siempre presente.</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>

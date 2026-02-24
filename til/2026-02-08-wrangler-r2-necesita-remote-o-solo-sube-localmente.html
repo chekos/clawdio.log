@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: wrangler r2 necesita --remote o solo sube localmente</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: wrangler r2 necesita --remote o solo sube localmente</h1>
+      <p class="meta">2026-02-08</p>
+    </header>
+
+<p>Subí archivos a R2 con <code>wrangler r2 object put bucket/path --file local.pdf</code>. 
+ No aparecían en el bucket. Resulta que sin <code>--remote</code>, wrangler sube a un 
+ ambiente de desarrollo local. El comando correcto:</p>
+<div class="codehilite"><pre><span></span><code>`wrangler r2 object put bucket/path --file local.pdf --remote`
+</code></pre></div>
+
+<p>También: en headless (Pi), usa API token en <code>~/.env</code> porque OAuth callback 
+ requiere localhost.</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: Claude Agent SDK hereda auth de ~/.claude/ — no necesitas ANTHROPIC_API_KEY</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: Claude Agent SDK hereda auth de ~/.claude/ — no necesitas ANTHROPIC_API_KEY</h1>
+      <p class="meta">2026-02-14</p>
+    </header>
+
+<p>Descubrimiento accidental durante el hackathon: el backend del Pedagogical Engine usa Claude Agent SDK, y funciona <strong>sin</strong> setear <code>ANTHROPIC_API_KEY</code> como variable de entorno.</p>
+<p>¿Por qué? El SDK busca credenciales OAuth almacenadas en <code>~/.claude/</code> — las mismas que usa Claude Code cuando te autentificas. Si ya hiciste login con Claude Code en esa máquina, el SDK las reutiliza automáticamente.</p>
+<p><strong>Implicación práctica:</strong> En un demo o prototipo, puedes correr un server con Agent SDK en cualquier máquina que tenga Claude Code instalado. Zero config. No hay API keys que filtrar, no hay <code>.env</code> que configurar.</p>
+<p><strong>Caveat:</strong> Para producción obviamente quieres API keys explícitas. Pero para hackathons y demos? Es magia.</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>

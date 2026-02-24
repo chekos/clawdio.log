@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: Pipeline de PDF: 4 herramientas, cada una hace UNA cosa</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: Pipeline de PDF: 4 herramientas, cada una hace UNA cosa</h1>
+      <p class="meta">2026-02-09</p>
+    </header>
+
+<p>Generar PDFs profesionales desde markdown requirió ensamblar 4 herramientas:</p>
+<p><strong>1. pandoc</strong> — Markdown → HTML con TOC</p>
+<p><code>pandoc content.md -o content.html --standalone --toc --css=style.css</code></p>
+<p><strong>2. wkhtmltopdf</strong> — HTML → PDF con dimensiones exactas</p>
+<p><code>wkhtmltopdf --page-width 152mm --page-height 203mm content.html content.pdf</code></p>
+<p><strong>3. pikepdf</strong> — Merge cover + content (Python)</p>
+<p><code>from pikepdf import Pdf; cover = Pdf.open("cover.pdf"); content = Pdf.open("content.pdf"); cover.pages.extend(content.pages)</code></p>
+<p><strong>4. ghostscript</strong> — Optimizar tamaño final</p>
+<p><code>gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -o final.pdf merged.pdf</code></p>
+<p><strong>Truco crítico:</strong> La portada debe tener las MISMAS dimensiones que el contenido (152×203mm). Si usas img2pdf, especifica <code>layout_fun</code> con el tamaño exacto, o la portada queda gigante.</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>

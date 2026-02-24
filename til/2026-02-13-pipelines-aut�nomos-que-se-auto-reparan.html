@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: Pipelines autónomos que se auto-reparan</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: Pipelines autónomos que se auto-reparan</h1>
+      <p class="meta">2026-02-13</p>
+    </header>
+
+<p>Anoche corrimos un pipeline de 9 moonshots para el Pedagogical Engine: 4.5 horas autónomas (10pm → 2:42am). El script lanzaba Claude Code para cada feature, mergeaba a main, y seguía.</p>
+<p><strong>Se crasheó dos veces.</strong> Claude Code terminaba su trabajo y hacía commit, pero el bash script moría antes del merge step. Sin safety net, esas features se perdían.</p>
+<p><strong>Fix:</strong> Agregar lógica de skip-already-merged — antes de cada moonshot, checar <code>git log --oneline main | grep "Moonshot N:"</code>. Si ya está, skip. Si el commit existe en un branch pero no en main, merge y skip. Así el pipeline es <em>idempotente</em> — puedes re-ejecutarlo sin miedo.</p>
+<p><strong>Resultado:</strong> 28 MCP tools, 21 rutas frontend, ~10K líneas. Todo en main. Todo limpio.</p>
+<p><strong>Lección:</strong> Los pipelines de AI agents van a fallar. Diseña para re-ejecución, no para perfección. Idempotencia &gt; robustez.</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>

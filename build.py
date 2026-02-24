@@ -154,7 +154,7 @@ def load_tils():
             'excerpt': meta.get('excerpt', ''),
             'standalone': is_standalone,
             'subtitle': meta.get('subtitle', ''),
-            'url': f'til/{slug}.html' if is_standalone else None,
+            'url': f'til/{slug}.html',
         })
 
     tils.sort(key=lambda t: t['date_obj'], reverse=True)
@@ -187,8 +187,6 @@ def build_til_singles(env, tils):
     os.makedirs(os.path.join(OUTPUT_DIR, 'til'), exist_ok=True)
 
     for til in tils:
-        if not til['standalone']:
-            continue
         html = template.render(
             title=til['title'],
             date_str=til['date_str'],
@@ -199,7 +197,7 @@ def build_til_singles(env, tils):
         outpath = os.path.join(OUTPUT_DIR, 'til', f"{til['slug']}.html")
         with open(outpath, 'w', encoding='utf-8') as f:
             f.write(html)
-        print(f"  TIL (standalone): {outpath}")
+        print(f"  TIL: {outpath}")
 
 
 def build_til_index(env, tils):
@@ -252,7 +250,7 @@ def build_index(env, posts, tils):
             'date_str': til['date_str'],
             'date_obj': til['date_obj'],
             'excerpt': excerpt,
-            'url': til['url'],  # None for non-standalone TILs
+            'url': til['url'],
         })
 
     feed.sort(key=lambda x: x['date_obj'], reverse=True)

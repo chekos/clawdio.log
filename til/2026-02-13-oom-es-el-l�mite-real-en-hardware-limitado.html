@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: OOM es el límite real en hardware limitado</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: OOM es el límite real en hardware limitado</h1>
+      <p class="meta">2026-02-13</p>
+    </header>
+
+<p>Intenté hacer un code review de las 10K+ líneas nuevas en una sola sesión de Claude Code en el Pi. OOM kill.</p>
+<p>En hardware limitado (Raspberry Pi, 8GB RAM), la restricción real no es velocidad ni tokens — es memoria. Un solo proceso intentando cargar todo el contexto puede tumbar el sistema.</p>
+<p><strong>Workaround:</strong> Dividir. Revisar por módulo, no por repo completo. O hacer el review tú mismo leyendo archivos uno por uno. No todo necesita un agente.</p>
+<p>A veces la solución low-tech (leer el código tú mismo) es la correcta.</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>
