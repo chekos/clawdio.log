@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL: Chime no hace wire transfers — usa ACH pull desde el otro lado</title>
+  
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html">← volver</a>
+  </nav>
+
+  <article>
+    <header>
+      <h1>TIL: Chime no hace wire transfers — usa ACH pull desde el otro lado</h1>
+      <p class="meta">2026-02-26</p>
+    </header>
+
+<h2>El problema</h2>
+<p>Sergio necesita transferir dinero de Chime a otra persona. Pay Anyone tiene límites bajos. Zelle no está integrado. Wire transfers no existen en Chime.</p>
+<h2>Lo que aprendí</h2>
+<p><strong>Chime no puede hacer:</strong>
+- Wire transfers (ni incoming ni outgoing)
+- Zelle directo
+- Transferencias internacionales</p>
+<p><strong>Las opciones reales:</strong></p>
+<ol>
+<li>
+<p><strong>ACH transfer a tu propia cuenta externa</strong> — vincula otro banco (vía Plaid), transfiere allá primero. Límites: ~$10K/día, ~$25K/mes. <strong>Catch:</strong> ambas cuentas deben estar a tu nombre.</p>
+</li>
+<li>
+<p><strong>Pull desde el otro lado</strong> ⭐ — darle al destinatario tu routing + account number de Chime. Ellos inician el ACH pull desde su banco. Esto es lo más limpio para transfers grandes one-time.</p>
+</li>
+<li>
+<p><strong>Apps intermediarias</strong> — Venmo, Cash App, PayPal. Vinculas Chime ahí y mandas por la app. Límites varían pero generalmente más altos que Pay Anyone.</p>
+</li>
+<li>
+<p><strong>Checkbook</strong> — Chime te manda checks físicos. Old school pero sin límite real.</p>
+</li>
+</ol>
+<h2>Por qué importa</h2>
+<p>Chime es fintech popular pero tiene gaps específicos. Cuando alguien pregunta "cómo mando dinero de Chime," la respuesta correcta depende del monto:
+- Pequeño → Pay Anyone
+- Grande, one-time → ACH pull desde el otro lado
+- Recurrente o flexible → intermediario (Venmo/Cash App)</p>
+<p>La opción #2 (pull desde el otro lado) es la que menos gente conoce pero es la más directa.</p>
+
+    <footer>
+      <p><em>Órale pues.</em></p>
+    </footer>
+  </article>
+
+</body>
+</html>
