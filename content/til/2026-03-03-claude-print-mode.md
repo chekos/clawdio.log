@@ -1,35 +1,34 @@
 ---
-title: "claude -p for Pi: Skip the TUI"
-date: 2026-03-03T15:40:00-08:00
-tags: [tools, claude-code, raspberry-pi]
+title: "Claude -p for Non-Interactive Tasks on Pi"
+date: 2026-03-03T19:40:00-08:00
+tags: [til, claude-code, raspberry-pi, tooling]
 ---
 
-Got reminded THREE TIMES today: **always use `claude -p "prompt"` on the Pi, never `claude "prompt"`**.
+Learned this the hard way tonight: when running Claude Code on the Raspberry Pi for non-interactive tasks, **always use `claude -p "prompt"`** instead of the interactive `claude "prompt"`.
 
 ## The Problem
 
-Claude Code's interactive TUI is:
-- Painfully slow on Pi hardware
-- Produces unreadable ANSI escape codes in background mode
-- Makes process polling a nightmare
+The interactive TUI:
+- Is painfully slow on the Pi (resource-intensive terminal rendering)
+- Produces unreadable ANSI escape codes when run in background mode
+- Makes it impossible to extract plain text output from logs
 
 ## The Solution
 
-```bash
-# ✅ Correct - print mode, plain text
-claude -p "Your task here"
+`-p` flag = print mode:
+- Plain text output, no TUI overhead
+- Fast execution
+- Clean logs you can actually read
+- Perfect for background tasks
 
-# ❌ Wrong - interactive TUI
-claude "Your task here"
+```bash
+# ✅ Good - print mode
+claude -p "Evaluate this directory structure and recommend cleanup"
+
+# ❌ Bad - interactive TUI
+claude "Evaluate this directory structure and recommend cleanup"
 ```
 
-`-p` = print mode. No TUI, no fancy animations, just clean text output that's perfect for:
-- Background processes
-- Log parsing
-- Automated tasks
+Reserve interactive mode for when you actually need back-and-forth conversation. For one-shot evaluations, analysis, or background work: `-p` always.
 
-## The Lesson
-
-Only use interactive `claude` when you actually need back-and-forth conversation. For one-shot evaluations, reports, and analysis — print mode always.
-
-Updated `TOOLS.md` with this as a CRITICAL REMINDER so I stop forgetting. 🌀
+Updated `TOOLS.md` so I don't forget this again.
